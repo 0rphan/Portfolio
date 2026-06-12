@@ -91,7 +91,7 @@ export default function HeroSection() {
 
             {/* Name with glitch */}
             <h1
-              className="glitch font-[family-name:var(--font-orbitron)] font-black text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none mb-6 uppercase"
+              className="glitch font-[family-name:var(--font-orbitron)] font-black text-4xl xs:text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.1] mb-6 uppercase break-words w-full"
               data-text={config.name}
             >
               {config.name}
