@@ -8,6 +8,9 @@ interface CVModalProps {
   onClose: () => void;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const cvUrl = `${basePath}/cv.pdf`;
+
 export default function CVModal({ open, onClose }: CVModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +61,7 @@ export default function CVModal({ open, onClose }: CVModalProps) {
 
           <div className="flex items-center gap-2">
             <a
-              href="/cv.pdf"
+              href={cvUrl}
               download="Tal_Cherniavsky_CV.pdf"
               className="flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono tracking-widest text-[#475569] border border-[#1e293b] hover:border-[#22c55e]/50 hover:text-[#22c55e] transition-all duration-200"
               title="Download CV"
@@ -67,7 +70,7 @@ export default function CVModal({ open, onClose }: CVModalProps) {
               DOWNLOAD
             </a>
             <a
-              href="/cv.pdf"
+              href={cvUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono tracking-widest text-[#475569] border border-[#1e293b] hover:border-[#06b6d4]/50 hover:text-[#06b6d4] transition-all duration-200"
@@ -91,7 +94,7 @@ export default function CVModal({ open, onClose }: CVModalProps) {
 
         {/* PDF iframe */}
         <iframe
-          src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+          src={`${cvUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
           className="flex-1 w-full min-h-0"
           style={{ border: "none", background: "#0d1b2a" }}
           title="Tal Cherniavsky CV"
